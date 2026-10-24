@@ -1,0 +1,29 @@
+name: fast_delivery
+description: Consulta de endereços, histórico offline e rotas para entregadores.
+publish_to: none
+version: 1.0.0+1
+environment:
+  sdk: '>=3.11.0 <4.0.0'
+  flutter: '>=3.41.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  dio: ^5.11.1
+  flutter_mobx: ^2.4.0
+  mobx: ^2.7.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path: ^1.9.1
+  path_provider: ^2.1.6
+  map_launcher: ^7.0.0
+  geocoding: ^5.0.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  mobx_codegen: ^2.8.0
+  build_runner: '>=2.16.1 <2.17.0'
+flutter:
+  uses-material-design: true

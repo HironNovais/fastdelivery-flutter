@@ -1,0 +1,6 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    { "name": "FastDelivery", "request": "launch", "type": "dart" }
+  ]
+}
