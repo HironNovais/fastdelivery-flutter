@@ -2,6 +2,25 @@
 
 Aplicativo acadêmico Flutter para entregadores consultarem endereços brasileiros, encontrarem CEPs, recuperarem consultas offline e abrirem rotas em aplicativos de mapas. Suporta **somente Android e iOS**. Não exige login, servidor próprio, conta ou chave de API.
 
+## Avaliação pelo professor
+
+**[Baixar FastDelivery.apk para Android](https://github.com/HironNovais/fastdelivery-flutter/releases/download/v1.0.0/FastDelivery.apk)** · **[Release v1.0.0](https://github.com/HironNovais/fastdelivery-flutter/releases/tag/v1.0.0)** · **[Roteiro de avaliação](docs/AVALIACAO.md)**
+
+O APK contém o aplicativo pronto para instalar em Android 7.0 ou superior, com suporte a ARM 32 bits, ARM 64 bits e x86_64. Tamanho: aproximadamente 54 MB. Baixe no celular, abra o arquivo e autorize a instalação por esse aplicativo se o Android solicitar. É uma versão para avaliação acadêmica, compilada em modo release e assinada com a chave de testes configurada no projeto.
+
+Para avaliar o código, com Flutter 3.47.7 / Dart 3.13.5 instalados:
+
+```powershell
+git clone https://github.com/HironNovais/fastdelivery-flutter.git
+cd fastdelivery-flutter
+flutter pub get
+dart run build_runner build
+flutter analyze
+flutter test
+```
+
+Essas verificações automatizadas não precisam de celular nem emulador. Para executar o app ou gerar APK, configure também JDK 17 e Android SDK, conforme as seções abaixo. O [roteiro de avaliação](docs/AVALIACAO.md) contém os casos funcionais, os resultados observados e as limitações da validação.
+
 ## Funcionalidades
 
 - Consulta por CEP com normalização e validação de oito dígitos antes da requisição.
@@ -156,6 +175,14 @@ flutter analyze
 flutter test
 flutter build apk --debug
 ```
+
+Para reproduzir o APK distribuído na Release:
+
+```powershell
+flutter build apk --release
+```
+
+Saída: `build/app/outputs/flutter-apk/app-release.apk`. O arquivo publicado como `FastDelivery.apk` é esse APK universal renomeado. A [Release v1.0.0](https://github.com/HironNovais/fastdelivery-flutter/releases/tag/v1.0.0) também inclui `SHA256SUMS.txt` para conferir a integridade do download.
 
 O parâmetro antigo `--delete-conflicting-outputs`, citado no documento, foi executado e o build_runner 2.16.1 avisou que ele foi removido e é ignorado. Use o comando sem esse parâmetro.
 
